@@ -10,7 +10,7 @@ class Server {
 
         this.paths = {
             users: '/api/users',
-            unitMeasurements: '/api/unitMeasurements'
+            products: '/api/products'
         };
 
         this.connectionMongoDB();
@@ -19,8 +19,8 @@ class Server {
     }
 
     routes() {
-        /*  this.app.use(this.paths.users, require('../routes/user.routes'));
-         this.app.use(this.paths.unitMeasurements, require('../routes/unit.measurement.routes')); */
+        this.app.use(this.paths.users, require('../routes/user.routes'));
+        this.app.use(this.paths.products, require('../routes/product.routes'));
     }
 
     listen() {

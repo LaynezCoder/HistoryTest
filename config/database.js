@@ -4,7 +4,9 @@ const connection = async() => {
     try {
         await mongoose.connect('mongodb://localhost:27017/HistoryTest', {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useCreateIndex: true,
+            useFindAndModify: false
         }).then(() => {
             console.log('Database online');
         })
